@@ -16,5 +16,20 @@ namespace VistaInterface
         {
             InitializeComponent();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbAutor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
