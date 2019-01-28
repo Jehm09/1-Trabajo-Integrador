@@ -27,24 +27,22 @@ namespace model
         
         public void guardar(string nombre, int peso, string autor, string fecha, string edicion) {
             // Creando el archivo
-            StreamWriter escritura = File.CreateText("Libro " + numeroLibros);
+            StreamWriter escritura = File.CreateText("Libros");
             // Escribiendo el archivo y creación del archivo
             Libro temp = new Libro(nombre, peso, fecha, autor, edicion);
-            escritura.WriteLine(temp.toString());
+            escritura.WriteLine(temp.toString(), true);
             // Cerrar el archivo
             escritura.Close();
         }
 
         public void cargar(){
             // Leyendo los archivos
-            bool t = false;
-            int i = 0;
-            if (i == numeroLibros) {
-                t = true;
-            }
-            while(i<numeroLibros && !t) {
-                TextReader leer = new StreamReader("Libro " +i);
-                string[] temp = leer.ReadLine().Split();
+            TextReader leer = new StreamReader("Libros");
+            
+            string m = leer.ReadLine();
+
+            while(m!="") {
+                string[] temp = m.Split();
                 string nombre = temp[0];
                 int peso = int.Parse(temp[4]);
                 string fecha = temp[3];
@@ -53,11 +51,10 @@ namespace model
                 // Creación del objeto
                 Libro a = new Libro(nombre, peso, fecha, autor, edicion);
                 libro.Add(a);
-                // Cerrar lectura
-                leer.Close();
-
-                i++;
+                m = leer.ReadLine();
             }
+            // Cerrar lectura
+            leer.Close();
         }
         // Métodos
 
