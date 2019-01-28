@@ -31,5 +31,10 @@ namespace model
         public string Fecha { get => fecha; set => fecha = value; }
         public string Autor { get => autor; set => autor = value; }
         public string Edicion { get => edicion; set => edicion = value; }
+
+        public string toString() {
+            return nombre + "," + autor + "," + edicion + "," + fecha + "," + peso;
+        }
+
     }
 }
