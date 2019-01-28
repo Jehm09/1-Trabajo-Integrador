@@ -40,17 +40,19 @@
             this.lbPeso = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.lbRegistroLibro = new System.Windows.Forms.Label();
+            this.btLibros = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btAgregar
             // 
             this.btAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAgregar.Location = new System.Drawing.Point(122, 282);
+            this.btAgregar.Location = new System.Drawing.Point(49, 280);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(107, 32);
             this.btAgregar.TabIndex = 0;
             this.btAgregar.Text = "Agregar";
             this.btAgregar.UseVisualStyleBackColor = true;
+            this.btAgregar.Click += new System.EventHandler(this.btAgregar_Click);
             // 
             // lbNombre
             // 
@@ -150,11 +152,22 @@
             this.lbRegistroLibro.TabIndex = 11;
             this.lbRegistroLibro.Text = "REGISTRO DE LIBROS";
             // 
+            // btLibros
+            // 
+            this.btLibros.Location = new System.Drawing.Point(223, 280);
+            this.btLibros.Name = "btLibros";
+            this.btLibros.Size = new System.Drawing.Size(100, 32);
+            this.btLibros.TabIndex = 12;
+            this.btLibros.Text = "Lista de libros";
+            this.btLibros.UseVisualStyleBackColor = true;
+            this.btLibros.Click += new System.EventHandler(this.btLibros_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(378, 342);
+            this.Controls.Add(this.btLibros);
             this.Controls.Add(this.lbRegistroLibro);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.lbPeso);
@@ -188,6 +201,7 @@
         private System.Windows.Forms.Label lbPeso;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label lbRegistroLibro;
+        private System.Windows.Forms.Button btLibros;
     }
 }
 

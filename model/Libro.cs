@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace model
 { 
 
-    class Libro
+    public class Libro
     {
         // Atributos
         private string nombre;

@@ -10,7 +10,7 @@ namespace model
 {
     
 
-    class Biblioteca
+    public class Biblioteca
     {
         // Atributos
         private string nombre;
@@ -27,7 +27,7 @@ namespace model
         
         public void guardar(string nombre, int peso, string autor, string fecha, string edicion) {
             // Creando el archivo
-            StreamWriter escritura = File.CreateText("Libros");
+            StreamWriter escritura = new StreamWriter("Libros.txt", true);
             // Escribiendo el archivo y creación del archivo
             Libro temp = new Libro(nombre, peso, fecha, autor, edicion);
             escritura.WriteLine(temp.toString(), true);
@@ -37,12 +37,12 @@ namespace model
 
         public void cargar(){
             // Leyendo los archivos
-            TextReader leer = new StreamReader("Libros");
+            TextReader leer = new StreamReader("Libros.txt");
             
             string m = leer.ReadLine();
 
-            while(m!="") {
-                string[] temp = m.Split();
+            while(!string.IsNullOrEmpty(m)) {
+                string[] temp = m.Split(',');
                 string nombre = temp[0];
                 int peso = int.Parse(temp[4]);
                 string fecha = temp[3];
