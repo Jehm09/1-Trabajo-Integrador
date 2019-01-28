@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace model {
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("Hola");
-            Console.WriteLine("Hola");
-            Console.WriteLine("Hola");
+            
         }
     }
 }
