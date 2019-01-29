@@ -39,25 +39,21 @@ namespace VistaInterface
 
         private void btAgregar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text) ||
+            if (!(string.IsNullOrEmpty(textBox1.Text) ||
                 string.IsNullOrEmpty(textBox2.Text) ||
                 string.IsNullOrEmpty(textBox3.Text) ||
                 string.IsNullOrEmpty(textBox4.Text) ||
-                string.IsNullOrEmpty(textBox5.Text))
+                string.IsNullOrEmpty(textBox5.Text)))
             {
-            }
-            else
-            {
-
                 biblioteca.guardar(textBox1.Text, Int32.Parse(textBox5.Text), textBox2.Text, textBox3.Text, textBox4.Text);
             }
-
-
         }
 
         private void btLibros_Click(object sender, EventArgs e)
         {
-
+            
+            Form2 f = new Form2(biblioteca.Libro);
+            f.Show();
         }
     }
 }

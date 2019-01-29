@@ -14,15 +14,16 @@ namespace model
     {
         // Atributos
         private string nombre;
-        private ArrayList libro;
+        private List<Libro> libro;
         private int numeroLibros;
 
-
+        public List<Libro> Libro { get => libro; set => libro = value; }
+        
         // Constructor
         public Biblioteca(string nombre) {
             this.nombre = nombre;
             numeroLibros = 0;
-            libro = new ArrayList();
+            libro = new List<Libro>();
         }
         
         public void guardar(string nombre, int peso, string autor, string fecha, string edicion) {
@@ -31,6 +32,7 @@ namespace model
             // Escribiendo el archivo y creación del archivo
             Libro temp = new Libro(nombre, peso, fecha, autor, edicion);
             escritura.WriteLine(temp.toString(), true);
+            libro.Add(temp);
             // Cerrar el archivo
             escritura.Close();
         }
